@@ -57,6 +57,23 @@
       
       return false;
     });
+
+    $('button[name="anonymous"]').on('click', function(event,data) {
+      // Grab values
+      var email = $('input[name="email"]').val(),
+        password = $('input[name="password"]').val();
+      // Submit
+      auth.signInAnonymously().catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorMessage);
+        $('.errors').text(errorMessage).addClass('show');
+      });
+      
+      return false;
+    });
+
     // Auth Observer
     auth.onAuthStateChanged(function(user) {
       if (user) {
