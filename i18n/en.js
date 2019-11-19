@@ -100,7 +100,8 @@ var i18n = {
 		"loginForm" : {
 			"email" : "Email",
 			"password" : "Password",
-			"button" : "Sign In"
+			"button" : "Sign In",
+			"signup" : "Register"
 		}
 	}
 };

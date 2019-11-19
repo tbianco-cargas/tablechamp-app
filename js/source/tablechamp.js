@@ -15,7 +15,8 @@
         logging = false,
         messageTimer,
         modalTimer,
-        scoringEventsTimer;
+        scoringEventsTimer,
+        currentUser;
     // last game player data key
     lastGame.game = [];
     // localData Object
@@ -49,6 +50,8 @@
         auth.onAuthStateChanged(function(user) {
             if (!user) {
                 window.location = "./index.html";
+            } else {
+                currentUser = user.email;
             }
         });
         initLoader();
